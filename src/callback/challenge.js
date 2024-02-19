@@ -22,11 +22,11 @@ fetchData(`${API}/products`, (error1, data1) => {
     if(error1) console.error(error1)
     fetchData(`${API}/products/${data1[0].id}`, (error2, data2) => {
         if(error2) console.error(error2)
-        fetchData(`${API}/categories/${data2?.category.id}`, (error3, data3) => {
+        fetchData(`${API}/products/category/${data2?.category.id}`, (error3, data3) => {
             if(error3) console.error(error3)
             console.log(data1[0])
             console.log(data2.title)
-            console.log(data3.name)
+            console.log(data3)
         })
     })
 })
